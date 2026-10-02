@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Insert Wholesaler Details</title>
+
+    <link rel="stylesheet" href="insert-wholesaler.css">
+</head>
+
+
+<body>
+
+    <!-- Background Glow -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <div class="insert-page">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="page-header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🛒
+                </div>
+
+                <div class="brand-text">
+
+                    <h1>
+                        Add Purchase
+                    </h1>
+
+                    <p>
+                        Wholesaler Purchase Details
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="back-button"
+                id="backButton"
+            >
+                ← Dashboard
+            </button>
+
+        </header>
+
+
+
+        <!-- ================= MAIN FORM ================= -->
+
+        <main class="form-container">
+
+            <form id="purchaseForm">
+
+
+                <!-- ================= WHOLESALER ================= -->
+
+                <section class="form-card">
+
+                    <div class="section-heading">
+
+                        <div class="section-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Wholesaler Name
+                            </h2>
+
+                            <p>
+                                Enter the wholesaler who supplied
+                                these products.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="wholesalerName">
+                            Wholesaler Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="wholesalerName"
+                            placeholder="Example: SLV"
+                            autocomplete="off"
+                            required
+                        >
+
+                        <small>
+                            Existing names will use the same
+                            wholesaler database.
+                        </small>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= PURCHASE DATE ================= -->
+
+                <section class="form-card">
+
+                    <div class="section-heading">
+
+                        <div class="section-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Purchase Date
+                            </h2>
+
+                            <p>
+                                Enter the date of this purchase.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="purchaseDate">
+                            Purchase Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="purchaseDate"
+                            required
+                        >
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= PHOTOS ================= -->
+
+                <section class="form-card">
+
+                    <div class="section-heading">
+
+                        <div class="section-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Bill Photos
+                            </h2>
+
+                            <p>
+                                Upload one or multiple JPG/JPEG
+                                photos of the bill.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="photo-upload-area">
+
+                        <label
+                            for="billPhotos"
+                            class="upload-box"
+                        >
+
+                            <span class="upload-icon">
+                                📷
+                            </span>
+
+                            <strong>
+                                Choose Bill Photos
+                            </strong>
+
+                            <small>
+                                JPG / JPEG • Multiple photos allowed
+                            </small>
+
+                        </label>
+
+
+                        <input
+                            type="file"
+                            id="billPhotos"
+                            accept=".jpg,.jpeg,image/jpeg"
+                            multiple
+                        >
+
+                    </div>
+
+
+                    <!-- Photo Preview -->
+
+                    <div
+                        id="photoPreview"
+                        class="photo-preview"
+                    ></div>
+
+                </section>
+
+
+
+                <!-- ================= PRODUCTS ================= -->
+
+                <section class="form-card">
+
+                    <div class="section-heading">
+
+                        <div class="section-number">
+                            04
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Products
+                            </h2>
+
+                            <p>
+                                Enter the number of products and
+                                their quantities.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="productCount">
+                            Number of Products
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productCount"
+                            min="1"
+                            placeholder="Example: 5"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="generateProducts"
+                        class="secondary-button"
+                    >
+                        Generate Product Fields →
+                    </button>
+
+
+                    <!-- Dynamic Products -->
+
+                    <div
+                        id="productsContainer"
+                        class="products-container"
+                    ></div>
+
+                </section>
+
+
+
+                <!-- ================= PRODUCT COST ================= -->
+
+                <section
+                    class="form-card"
+                    id="costSection"
+                    style="display: none;"
+                >
+
+                    <div class="section-heading">
+
+                        <div class="section-number">
+                            05
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Product Cost
+                            </h2>
+
+                            <p>
+                                Enter the price per unit for each
+                                product.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="costContainer"
+                        class="cost-container"
+                    ></div>
+
+
+                    <!-- Product Total -->
+
+                    <div class="total-box">
+
+                        <span>
+                            Product Total Cost
+                        </span>
+
+                        <strong id="productTotal">
+                            ₹0.00
+                        </strong>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= TRANSPORT ================= -->
+
+                <section class="form-card">
+
+                    <div class="section-heading">
+
+                        <div class="section-number">
+                            06
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Transport Charge
+                            </h2>
+
+                            <p>
+                                Enter the transport charge directly.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="transportCharge">
+                            Transport Charge
+                        </label>
+
+                        <div class="amount-input">
+
+                            <span>₹</span>
+
+                            <input
+                                type="number"
+                                id="transportCharge"
+                                min="0"
+                                step="0.01"
+                                value="0"
+                                placeholder="0"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= FINAL TOTAL ================= -->
+
+                <section class="final-total">
+
+                    <div>
+
+                        <span>
+                            Final Total
+                        </span>
+
+                        <small>
+                            Products + Transport
+                        </small>
+
+                    </div>
+
+                    <strong id="finalTotal">
+                        ₹0.00
+                    </strong>
+
+                </section>
+
+
+
+                <!-- ================= PAID DATE ================= -->
+
+                <section class="form-card">
+
+                    <div class="section-heading">
+
+                        <div class="section-number">
+                            07
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Bill Paid Date
+                            </h2>
+
+                            <p>
+                                Enter the date when the bill was paid.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="paidDate">
+                            Bill Paid Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="paidDate"
+                        >
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= SAVE ================= -->
+
+                <button
+                    type="submit"
+                    class="save-button"
+                >
+
+                    <span>
+                        💾
+                    </span>
+
+                    Save Purchase Record
+
+                </button>
+
+
+            </form>
+
+        </main>
+
+    </div>
+
+
+    <script src="insert-wholesaler.js"></script>
+
+</body>
+
+</html>

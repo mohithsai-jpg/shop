@@ -1,0 +1,174 @@
+html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Wholesaler Database</title>
+
+    <link rel="stylesheet" href="wholesaler-database.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+
+    <!-- Main Container -->
+    <main class="database-container">
+
+        <!-- Header -->
+        <header class="database-header">
+
+            <button
+                type="button"
+                id="backButton"
+                class="back-button"
+            >
+                ← Dashboard
+            </button>
+
+            <div class="header-content">
+
+                <div class="header-icon">
+                    🏪
+                </div>
+
+                <div>
+                    <h1>Wholesaler Database</h1>
+
+                    <p>
+                        Manage your wholesaler purchase records
+                    </p>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Wholesaler Section -->
+        <section class="database-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        WHOLESALERS
+                    </span>
+
+                    <h2>
+                        Your Wholesalers
+                    </h2>
+                </div>
+
+                <div class="count-badge">
+                    <span id="wholesalerCount">0</span>
+                    Wholesalers
+                </div>
+
+            </div>
+
+
+            <!-- Wholesaler Buttons -->
+            <div
+                id="wholesalerList"
+                class="wholesaler-list"
+            >
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        📦
+                    </div>
+
+                    <h3>
+                        No wholesalers yet
+                    </h3>
+
+                    <p>
+                        Add your first wholesaler purchase
+                        to see it here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Purchase Section -->
+        <section
+            id="purchaseSection"
+            class="database-card purchase-section"
+            style="display: none;"
+        >
+
+            <!-- Purchase Header -->
+            <div class="purchase-header">
+
+                <button
+                    type="button"
+                    id="backToWholesalers"
+                    class="small-back-button"
+                >
+                    ← All Wholesalers
+                </button>
+
+
+                <div class="selected-wholesaler">
+
+                    <div class="selected-icon">
+                        🏪
+                    </div>
+
+                    <div>
+
+                        <span>
+                            SELECTED WHOLESALER
+                        </span>
+
+                        <h2 id="wholesalerTitle">
+                            Wholesaler
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Purchase Records -->
+            <div
+                id="purchaseList"
+                class="purchase-list"
+            >
+
+                <!-- Purchase cards will be created by JavaScript -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="wholesaler.js"></script>
+
+</body>
+</html>

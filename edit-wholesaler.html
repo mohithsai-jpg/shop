@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Edit Purchase</title>
+
+    <link
+        rel="stylesheet"
+        href="edit-wholesaler.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+    </div>
+
+
+    <main class="edit-container">
+
+
+        <!-- Header -->
+        <header class="edit-header">
+
+            <button
+                type="button"
+                id="backButton"
+                class="back-button"
+            >
+                ← Back
+            </button>
+
+
+            <div class="header-content">
+
+                <div class="header-icon">
+                    ✏️
+                </div>
+
+                <div>
+
+                    <span class="header-label">
+                        PURCHASE MANAGEMENT
+                    </span>
+
+                    <h1>
+                        Edit Purchase
+                    </h1>
+
+                    <p>
+                        Update bill photos and purchase details
+                    </p>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- Wholesaler -->
+        <section class="form-card">
+
+            <div class="section-title">
+
+                <span>
+                    WHOLESALER
+                </span>
+
+                <h2 id="wholesalerNameDisplay">
+                    Loading...
+                </h2>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Purchase Date -->
+        <section class="form-card">
+
+            <label for="purchaseDate">
+                Purchase Date
+            </label>
+
+            <input
+                type="date"
+                id="purchaseDate"
+                required
+            >
+
+        </section>
+
+
+
+        <!-- Bill Photos -->
+        <section class="form-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        BILL DOCUMENTS
+                    </span>
+
+                    <h2>
+                        Bill Photos
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <label
+                for="billPhotos"
+                class="upload-box"
+            >
+
+                <div class="upload-icon">
+                    📷
+                </div>
+
+                <strong>
+                    Add Bill Photos
+                </strong>
+
+                <small>
+                    JPG / JPEG images only
+                </small>
+
+            </label>
+
+
+            <input
+                type="file"
+                id="billPhotos"
+                accept=".jpg,.jpeg,image/jpeg"
+                multiple
+                hidden
+            >
+
+
+            <div
+                id="photoPreview"
+                class="photo-preview"
+            ></div>
+
+        </section>
+
+
+
+        <!-- Product Count -->
+        <section class="form-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        PRODUCTS
+                    </span>
+
+                    <h2>
+                        Product Details
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="productCount">
+                    Number of Products
+                </label>
+
+                <input
+                    type="number"
+                    id="productCount"
+                    min="1"
+                    placeholder="Enter number of products"
+                >
+
+            </div>
+
+
+            <button
+                type="button"
+                id="generateProducts"
+                class="secondary-button"
+            >
+                Update Product Fields →
+            </button>
+
+
+            <div
+                id="productsContainer"
+                class="products-container"
+            ></div>
+
+        </section>
+
+
+
+        <!-- Product Costs -->
+        <section
+            class="form-card"
+            id="costSection"
+            style="display:none;"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        PRICING
+                    </span>
+
+                    <h2>
+                        Product Costs
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="costContainer"
+                class="cost-container"
+            ></div>
+
+
+            <div class="total-box">
+
+                <span>
+                    Product Total Cost
+                </span>
+
+                <strong id="productTotal">
+                    ₹0.00
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Transport -->
+        <section class="form-card">
+
+            <div class="input-group">
+
+                <label for="transportCharge">
+                    Transport Charge
+                </label>
+
+
+                <div class="money-input">
+
+                    <span>
+                        ₹
+                    </span>
+
+                    <input
+                        type="number"
+                        id="transportCharge"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                        placeholder="Enter transport charge"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Final Total -->
+        <section class="final-total-card">
+
+            <span>
+                FINAL TOTAL
+            </span>
+
+            <strong id="finalTotal">
+                ₹0.00
+            </strong>
+
+        </section>
+
+
+
+        <!-- Paid Date -->
+        <section class="form-card">
+
+            <div class="input-group">
+
+                <label for="paidDate">
+                    Bill Paid Date
+                </label>
+
+                <input
+                    type="date"
+                    id="paidDate"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Save -->
+        <button
+            type="button"
+            id="saveChanges"
+            class="save-button"
+        >
+
+            <span>
+                💾
+            </span>
+
+            Save Changes
+
+        </button>
+
+
+    </main>
+
+
+    <script src="edit-wholesaler.js"></script>
+
+</body>
+
+</html>

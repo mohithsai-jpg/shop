@@ -1,0 +1,914 @@
+/* ==========================================
+   EDIT WHOLESALER - PREMIUM UI
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(99, 102, 241, 0.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(168, 85, 247, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #080b18,
+            #10152b 50%,
+            #080b18
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   BACKGROUND
+   ========================================== */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.35;
+}
+
+.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: #6366f1;
+    top: -100px;
+    left: -100px;
+}
+
+.orb-2 {
+    width: 350px;
+    height: 350px;
+    background: #9333ea;
+    right: -120px;
+    top: 30%;
+}
+
+.orb-3 {
+    width: 280px;
+    height: 280px;
+    background: #2563eb;
+    bottom: -100px;
+    left: 35%;
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+   ========================================== */
+
+.edit-container {
+    width: min(900px, 92%);
+    margin: 0 auto;
+    padding: 35px 0 60px;
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.edit-header {
+    margin-bottom: 28px;
+}
+
+.back-button {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    background: rgba(255, 255, 255, 0.07);
+
+    color: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 11px 17px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+    backdrop-filter: blur(15px);
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-2px);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.header-icon {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.35),
+            rgba(168, 85, 247, 0.25)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 10px 35px rgba(99, 102, 241, 0.20);
+
+    font-size: 28px;
+}
+
+.header-label {
+    color: #a5b4fc;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.header-content h1 {
+    margin-top: 5px;
+
+    font-size: clamp(28px, 4vw, 40px);
+
+    font-weight: 750;
+
+    letter-spacing: -1px;
+}
+
+.header-content p {
+    margin-top: 7px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   FORM CARD
+   ========================================== */
+
+.form-card {
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.11);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(22px);
+
+    -webkit-backdrop-filter: blur(22px);
+}
+
+
+/* ==========================================
+   SECTION TITLE
+   ========================================== */
+
+.section-title span,
+.section-label {
+    display: block;
+
+    color: #a5b4fc;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 7px;
+}
+
+.section-title h2 {
+    font-size: 24px;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 22px;
+}
+
+
+/* ==========================================
+   INPUTS
+   ========================================== */
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label,
+.form-card > label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: rgba(255, 255, 255, 0.70);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(0, 0, 0, 0.18);
+
+    color: #ffffff;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.25s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.32);
+}
+
+input:focus {
+    border-color: rgba(129, 140, 248, 0.65);
+
+    background: rgba(99, 102, 241, 0.07);
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.10);
+}
+
+
+/* Date input */
+input[type="date"] {
+    color-scheme: dark;
+}
+
+
+/* ==========================================
+   UPLOAD BOX
+   ========================================== */
+
+.upload-box {
+    min-height: 145px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 17px;
+
+    border: 1px dashed rgba(129, 140, 248, 0.35);
+
+    background:
+        rgba(99, 102, 241, 0.045);
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+    text-align: center;
+}
+
+.upload-box:hover {
+    border-color: rgba(129, 140, 248, 0.75);
+
+    background:
+        rgba(99, 102, 241, 0.09);
+
+    transform: translateY(-2px);
+}
+
+.upload-icon {
+    font-size: 32px;
+}
+
+.upload-box strong {
+    font-size: 15px;
+}
+
+.upload-box small {
+    color: rgba(255, 255, 255, 0.40);
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   PHOTO PREVIEW
+   ========================================== */
+
+.photo-preview {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(140px, 1fr));
+
+    gap: 14px;
+
+    margin-top: 18px;
+}
+
+.preview-item {
+    position: relative;
+
+    height: 155px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.preview-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.remove-photo {
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.70);
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    line-height: 30px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.remove-photo:hover {
+    background: rgba(239, 68, 68, 0.85);
+
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   PRODUCT ROWS
+   ========================================== */
+
+.products-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    margin-top: 20px;
+}
+
+.product-row {
+    display: flex;
+
+    gap: 15px;
+
+    padding: 17px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.product-number {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: rgba(99, 102, 241, 0.15);
+
+    color: #c7d2fe;
+
+    font-weight: 700;
+}
+
+.product-fields {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 14px;
+}
+
+.product-fields .input-group {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   SECONDARY BUTTON
+   ========================================== */
+
+.secondary-button {
+    width: 100%;
+
+    height: 50px;
+
+    border: 1px solid rgba(129, 140, 248, 0.30);
+
+    border-radius: 12px;
+
+    background:
+        rgba(99, 102, 241, 0.11);
+
+    color: #c7d2fe;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.secondary-button:hover {
+    background:
+        rgba(99, 102, 241, 0.20);
+
+    border-color:
+        rgba(129, 140, 248, 0.55);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   COST ROW
+   ========================================== */
+
+.cost-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.cost-row {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr 1fr 0.8fr;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cost-product-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.cost-number {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: rgba(99, 102, 241, 0.14);
+
+    color: #c7d2fe;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.cost-product-info strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+.cost-product-name {
+    display: block;
+
+    margin-top: 3px;
+
+    color: rgba(255, 255, 255, 0.40);
+
+    font-size: 11px;
+}
+
+.amount-input {
+    display: flex;
+
+    align-items: center;
+
+    height: 48px;
+
+    padding-left: 14px;
+
+    border-radius: 11px;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.amount-input span {
+    color: #a5b4fc;
+
+    font-weight: 700;
+}
+
+.amount-input input {
+    height: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    padding-left: 8px;
+}
+
+.product-total-display {
+    color: rgba(255, 255, 255, 0.50);
+
+    font-size: 12px;
+
+    text-align: right;
+}
+
+.product-total-display strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   TOTAL BOX
+   ========================================== */
+
+.total-box {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 18px;
+
+    padding: 17px;
+
+    border-radius: 14px;
+
+    background: rgba(99, 102, 241, 0.08);
+
+    border: 1px solid rgba(129, 140, 248, 0.15);
+}
+
+.total-box span {
+    color: rgba(255, 255, 255, 0.60);
+
+    font-size: 13px;
+}
+
+.total-box strong {
+    color: #c7d2fe;
+
+    font-size: 20px;
+}
+
+
+/* ==========================================
+   MONEY INPUT
+   ========================================== */
+
+.money-input {
+    display: flex;
+
+    align-items: center;
+
+    height: 50px;
+
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    padding-left: 15px;
+}
+
+.money-input > span {
+    color: #a5b4fc;
+
+    font-weight: 700;
+
+    font-size: 16px;
+}
+
+.money-input input {
+    border: none;
+
+    background: transparent;
+
+    height: 100%;
+
+    box-shadow: none;
+
+    padding-left: 9px;
+}
+
+
+/* ==========================================
+   FINAL TOTAL
+   ========================================== */
+
+.final-total-card {
+    margin-bottom: 20px;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.14),
+            rgba(168, 85, 247, 0.10)
+        );
+
+    border: 1px solid rgba(129, 140, 248, 0.22);
+
+    box-shadow:
+        0 15px 45px rgba(99, 102, 241, 0.08);
+}
+
+.final-total-card span {
+    display: block;
+
+    color: #a5b4fc;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.final-total-card strong {
+    font-size: 32px;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   SAVE BUTTON
+   ========================================== */
+
+.save-button {
+    width: 100%;
+
+    height: 58px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 35px rgba(99, 102, 241, 0.25);
+
+    transition: 0.25s ease;
+}
+
+.save-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 45px rgba(99, 102, 241, 0.35);
+}
+
+.save-button:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    .edit-container {
+        width: 94%;
+
+        padding-top: 20px;
+    }
+
+    .form-card {
+        padding: 18px;
+
+        border-radius: 19px;
+    }
+
+    .header-content {
+        align-items: flex-start;
+    }
+
+    .header-icon {
+        width: 52px;
+        height: 52px;
+
+        font-size: 23px;
+    }
+
+    .product-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .cost-row {
+        grid-template-columns: 1fr;
+    }
+
+    .product-total-display {
+        text-align: left;
+    }
+
+    .photo-preview {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .preview-item {
+        height: 140px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .header-content h1 {
+        font-size: 27px;
+    }
+
+    .header-content p {
+        font-size: 12px;
+    }
+
+    .database-card,
+    .form-card {
+        padding: 15px;
+    }
+
+    .final-total-card {
+        padding: 20px;
+    }
+
+    .final-total-card strong {
+        font-size: 27px;
+    }
+
+    .photo-preview {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .preview-item {
+        height: 125px;
+    }
+}
